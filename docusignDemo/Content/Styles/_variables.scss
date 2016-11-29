@@ -1,0 +1,48 @@
+﻿$background: url("../Images/bg.jpg");
+$font-family: "Century Gothic","Lucida Grande",Arial,sans-serif;
+
+$box-background-colour:  rgba(230, 227, 227, 0.96);
+$box-shadow: rgba(19, 35, 47, 0.3);
+
+$primaryColour: #1e9f67;
+$primaryColourDark: #188d5a ;
+$defaultColour: #949494;
+$defaultColourDark: #808080;
+$dangerColour: #e74c3c;
+$dangerColourDark: #bb4236;
+ 
+$bodyTextColor: rgba(0, 0, 0, 0.90);
+
+// buttons
+$button-primary: $primaryColour;
+$button-primary-hover: $primaryColourDark;
+$button-default: $defaultColour;
+$button-default-hover: $defaultColourDark;
+$button-danger:$dangerColour;
+$button-danger-hover:  $dangerColourDark;
+
+// radio buttons
+$radio-button: $defaultColour;
+$radio-button-checked: $primaryColour;
+
+// login form variables
+$login-box-background-colour: rgba(0, 0, 0, 0.90);
+$login-box-shadow: $box-shadow;
+$login-link-color: $primaryColour;
+$login-link-hover: $primaryColourDark;
+$login-title-color: #dddada;
+$login-input-border: #dddada;
+$login-input-focus-border: $primaryColour;
+$login-label-color: $defaultColour;
+$login-label-req: $primaryColour;
+$login-validation-errors: $defaultColour;
+$login-button-color: $primaryColour;
+$login-button-hover: $primaryColourDark;
+$login-remember-me: $defaultColour;
+
+// side menu variables
+$sidemenu-link-hover: $defaultColour;
+
+// footer variables
+$footer-link-color: $defaultColour;
+$footer-link-hover: $primaryColour;

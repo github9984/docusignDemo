@@ -1,0 +1,41 @@
+﻿@model docusignDemo.Data.Entities.Template
+
+@{
+    ViewBag.Title = "Delete Template";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="box">
+    <h3><span>@ViewBag.Title</span></h3>
+
+    <div>
+      
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <p>Deleting this Template will remove all Roles from this template. It will not delete the Roles.</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Template Name</label>
+                    <div class="col-md-10 align-fix">
+                        @Html.DisplayFor(m => m.TemplateName, new {@class = "form-control"})
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        @Html.ActionLink("Back to List", "Index", null, new {@class = "button button-default"})
+                        <input type="submit" value="Delete" class="button button-danger"/>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

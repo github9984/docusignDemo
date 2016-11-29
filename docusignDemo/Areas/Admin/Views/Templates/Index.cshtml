@@ -1,0 +1,44 @@
+﻿
+@model IEnumerable<docusignDemo.Models.TemplateViewModel>
+
+@{
+    ViewBag.Title = "Templates";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="box">
+    <h3><span>@ViewBag.Title</span></h3>
+    <p>
+        @Html.ActionLink("Sync Templates", "Sync", null, new { @class = "button button-primary" })
+
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Identifier
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        
+            @foreach (var item in Model)
+             {
+                 <tr>
+                     <td>@Html.DisplayFor(modelItem=> item.TemplateId)</td>
+                     <td>
+                         @Html.DisplayFor(modelItem => item.TemplateName)
+                     </td>
+                     <td>
+                        @Html.ActionLink("Assign Roles", "Edit", new {id = item.TemplateId}, new {@class = "button button-default"})
+                        
+                        @Html.ActionLink("Delete", "Delete", new {id = item.TemplateId}, new {@class = "button button-danger"})
+                     </td>
+                 </tr>
+             }
+      
+    </table>
+
+</div>

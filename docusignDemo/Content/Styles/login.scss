@@ -1,0 +1,177 @@
+﻿@import "variables";
+@import "footer";
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+// hide scroll bars
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+html {
+    background: $background no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+body {
+    font-family: $font-family;
+}
+
+// override footer element
+#footer{
+      position: fixed;
+}
+
+.login-form {
+    background: $login-box-background-colour;
+    padding: 40px;
+    max-width: 500px;
+    margin: 12% auto;
+    box-shadow: 0 4px 10px 4px $login-box-shadow;
+
+    a {
+        text-decoration: none;
+        color: $login-link-color;
+        -webkit-transition: .5s ease;
+        transition: .5s ease;
+    }
+
+    a:hover {
+        color: $login-link-hover;
+    }
+
+    .title {
+        text-align: center;
+        color: $login-title-color;
+        font-weight: 600;
+        margin: 0 0 40px;
+        text-transform: uppercase;
+        font-size: 40px;
+    }
+
+    .site {
+        font-weight: 300;
+    }
+ 
+    .field-wrap {
+        position: relative;
+        margin-bottom: 40px;
+
+        label {
+            position: absolute;
+            -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+            left: 13px;
+            color: $login-label-color;
+            -webkit-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+            -webkit-backface-visibility: hidden;
+            pointer-events: none;
+            font-size: 18px;
+        }
+
+        label .req {
+            margin: 2px;
+            color: $login-label-req;
+        }
+
+        label.active {
+            -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+            left: 2px;
+            font-size: 14px;
+        }
+
+        label.active .req {
+            opacity: 0;
+        }
+
+        label.highlight {
+            color: white;
+        }
+
+        input, textarea {
+            font-size: 22px;
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 5px 10px;
+            background: none;
+            background-image: none;
+            border: 1px solid $login-input-border;
+            color: white;
+            border-radius: 0;
+            -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+            transition: border-color .25s ease, box-shadow .25s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: 0;
+            border-color: $login-input-focus-border;
+        }
+    }
+
+    .button {
+        border: 0;
+        outline: none;
+        border-radius: 0;
+        padding: 15px 0;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        background: $login-button-color;
+        color: white;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        -webkit-appearance: none;
+    }
+
+    .button:hover, .button:focus {
+        background: $login-button-hover;
+    }
+
+    .button-block {
+        display: block;
+        width: 100%;
+    }
+
+    .forgot {
+        margin: -20px 0 10px 0;
+        text-align: right;
+    }
+
+    .remember {
+        text-align: left;
+        color: $login-remember-me;
+    }
+
+    .validation-summary-errors {
+
+        li {
+            font-size: 18px;
+            color: $login-validation-errors;
+            padding: 7px;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        li::before {
+            font-family: FontAwesome;
+            content: "\f06a\ ";
+            display: inline-block;
+            padding-right: 3px;
+            vertical-align: middle;
+            color: $login-validation-errors;
+        }
+    }
+}

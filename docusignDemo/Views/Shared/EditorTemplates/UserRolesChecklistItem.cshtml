@@ -1,0 +1,8 @@
+﻿@model docusignDemo.Models.UserRolesChecklistItem
+
+<div class="checkbox-align-fix">
+    <label>
+        @Html.CheckBoxFor(x => x.IsChecked) @Html.DisplayFor(x => x.RoleName)
+        @Html.HiddenFor(x=>x.RoleName)
+    </label>
+</div>

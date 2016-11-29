@@ -1,0 +1,20 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+<div class="box">
+    <hgroup class="title">
+        <h3><span>@ViewBag.Title</span></h3>
+    </hgroup>
+    <div>
+        <p>
+            @*This is optional*@
+            @ViewBag.ErrorMessage
+        </p>
+        <p>
+            Oops. Something went wrong.
+            Please contact the site administrator.
+        </p>
+    </div>
+</div>

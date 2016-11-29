@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home";
+}
+
+
+<div class="box">
+    <h1>
+        <span>DocuSign Demo</span>
+    </h1>
+
+    <div>
+        This project will demonstrate the basic features of DocuSign using their SDK library, as well as an oppportunity to showcase some of the design patterns I have learnt over the years.<br />
+    </div>
+    <br />
+
+    <h3>Skills</h3>
+    <ul>
+        <li>C#</li>
+        <li>MVC</li>
+        <li>CSS3 & HTML5 - SASS</li>
+        <li>User Provisioning using ASP Identity Membership</li>
+        <li>Entity Framework (LINQ)</li>
+        <li>Separation of Concerns</li>
+        <li>ORM Pattern</li>
+        <li>Dependency Injection</li>
+    </ul>
+
+    <h3>Project Requirements</h3>
+    <ul>
+        <li>Microsoft .NET version 4.6.1 or later.</li>
+        <li>SQL Express 2016</li>
+    </ul>
+    <h3>DocuSign</h3>
+    <ul>
+        <li>
+            DocuSign C# SDK GitHub Source<br />
+            <a href="https://github.com/docusign/docusign-csharp-client">https://github.com/docusign/docusign-csharp-client</a>
+        </li>
+    </ul>
+
+    <h3>Usage</h3>
+    <div class="code-block">
+        <b>Account</b><br />
+        Account.Login(); <span class="comment">// Log into DocuSign account using the credentials stored in web.config.</span><br /><br />
+
+
+        <b>Templates</b><br />
+        var templatesApi = new TemplatesApi();<br />
+        templatesApi.GetList(); <span class="comment">// Gets all the templates on your DocuSign account.</span><br />
+        templatesApi.Get(); <span class="comment">// Get a specified Template based on Id.</span><br /><br />
+
+        <b>Envelopes</b><br />
+        var envelopesApi = new EnvelopesApi();<br />
+        envelopesApi.ListRecipients(); <span class="comment">// Get the list of recipients on the envelope.</span><br />
+        envelopesApi.CreateEnvDef(); <span class="comment">// Create an envelope definition.</span><br />
+        envelopesApi.CreateEnvelope(); <span class="comment">// Create the envelope.</span><br />
+        envelopesApi.CreateRecipientView(); <span class="comment">// Create the recipient view for embedded signing.</span><br /><br />
+
+        <b>Recipients</b><br />
+        var recipientsApi = new RecipientsApi();<br />
+        recipientsApi.ViewRequest();<span class="comment">// Returns the view for embedded signing.</span>
+    </div>
+
+</div>

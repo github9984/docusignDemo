@@ -1,0 +1,96 @@
+﻿@using System.Web.UI.WebControls
+@model docusignDemo.Models.Purchaser
+
+<!-- ko foreach: purchasers -->
+<fieldset>
+    <h3 ><span>Purchaser <span data-bind="text: $index() + 1"></span></span></h3>
+    
+    <p class="warning">
+        You must enter either a Company Name or First Name and Surname.
+    </p>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", data_bind = "value: firstName, namePath: true" })
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+        @Html.LabelFor(model => model.Surname, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Surname, new { @class = "form-control", data_bind = "value: surname , namePath: true" })
+            @Html.ValidationMessageFor(model => model.Surname)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DOB, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.DOB, new { @class = "form-control", data_bind = "value: dob , namePath: true", placeholder = "eg. dd/mm/yyyy" })
+            @Html.ValidationMessageFor(model => model.DOB)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CompanyName, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control", data_bind = "value: companyName, namePath: true" })
+            @Html.ValidationMessageFor(model => model.CompanyName)
+        </div>
+        @Html.LabelFor(model => model.ABN, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.ABN, new { @class = "form-control", data_bind = "value: abn, namePath: true", placeholder = "eg. xx xxx xxx xxx" })
+            @Html.ValidationMessageFor(model => model.ABN)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address, new { @class = "control-label col-md-2 required" })
+        <div class="col-md-4">
+            @Html.TextAreaFor(model => model.Address, new { @class = "form-control", rows = 5, data_bind = "value: address, namePath: true", required = "required" })
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+    </div>
+    <p class="warning">
+        You must enter either a Phone Number or Mobile.
+    </p>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Phone, new { @class = "control-label col-md-2 " })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", data_bind = "value: phone, namePath: true", placeholder = "eg. (03) 9xxx xxxx" })
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+      @Html.LabelFor(model => model.Mobile, new { @class = "control-label col-md-2 " })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Mobile, new { @class = "form-control", data_bind = "value: mobile, namePath: true", placeholder = "eg: 04xx xxx xxx" })
+            @Html.ValidationMessageFor(model => model.Mobile)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2 required" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", data_bind = "value: email, namePath: true", required = "required", placeholder = "eg. someone@example.com" })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NatureOfAuthority, new {@class = "control-label col-md-2"})
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.NatureOfAuthority, new {@class = "form-control", data_bind = "value: natureOfAuthority, namePath: true"})
+            @Html.ValidationMessageFor(model => model.NatureOfAuthority)
+        </div>
+
+        @Html.LabelFor(model => model.SharePercentage, new {@class = "control-label col-md-2"})
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.SharePercentage, new {@class = "form-control", data_bind = "value: sharePercentage, namePath: true", @readonly="readonly"})
+            @Html.ValidationMessageFor(model => model.SharePercentage)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TaxFileNumber, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.TaxFileNumber, new { @class = "form-control", data_bind = "value: taxFileNumber, namePath: true", placeholder= "eg: xxx xxx xxx" })
+            @Html.ValidationMessageFor(model => model.TaxFileNumber)
+        </div>
+    </div>
+</fieldset>
+<!-- /ko -->

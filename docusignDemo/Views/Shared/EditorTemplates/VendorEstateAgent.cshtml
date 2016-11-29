@@ -1,0 +1,41 @@
+﻿@model docusignDemo.Models.VendorEstateAgent
+
+
+<fieldset>
+    <div class="form-group">
+        @Html.LabelFor(model => model.CompanyName, new { @class = "control-label col-md-2 required" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CompanyName)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address, new { @class = "control-label col-md-2 required" })
+        <div class="col-md-4">
+            @Html.TextAreaFor(model => model.Address, new { @class = "form-control", rows = 5 })
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Phone, new { @class = "control-label col-md-2 required" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "eg. (03) 9xxx xxxx" })
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Fax, new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Fax, new { @class = "form-control", placeholder = "eg. (03) 9xxx xxxx" })
+            @Html.ValidationMessageFor(model => model.Fax)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Reference, new { @class = "control-label col-md-2 required" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Reference, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Reference)
+        </div>
+    </div>
+
+</fieldset>

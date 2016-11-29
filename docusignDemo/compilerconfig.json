@@ -1,0 +1,22 @@
+[
+  {
+    "outputFile": "Content/site.css",
+    "inputFile": "Content/site.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "Content/Styles/site.css",
+    "inputFile": "Content/Styles/site.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "Content/Styles/loader.css",
+    "inputFile": "Content/Styles/loader.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "Content/Styles/login.css",
+    "inputFile": "Content/Styles/login.scss",
+    "sourceMap": false
+  }
+]

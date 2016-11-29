@@ -1,0 +1,47 @@
+﻿@model docusignDemo.Models.LoginViewModel
+@{
+    ViewBag.Title = "Sign in";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="login-form">
+    <h1 class="title">Welcome to <span class="site">DocuSign demo</span></h1>
+    
+    
+    <div style="color:whitesmoke">user: demo@demo.com / pwd: Demo123!</div>
+
+    @using (Html.BeginForm("Login", "Account", new {ViewBag.ReturnUrl},
+        FormMethod.Post, new {@class = "form-horizontal", role = "form", id = "frmLogin"}))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "")
+
+        <div class="field-wrap">
+            <label>
+                <i class="fa fa-envelope"></i> Email Address<span class="req">*</span>
+            </label>
+            <input type="email" name="Username" required autocomplete="off"/>
+            @Html.ValidationMessageFor(m => m.Username)
+        </div>
+
+        <div class="field-wrap">
+            <label>
+                <i class="fa fa-lock"></i> Password<span class="req">*</span>
+            </label>
+            <input type="password" name="Password" required autocomplete="off"/>
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+
+        <div class="remember">
+            <label>@Html.CheckBoxFor(m => m.RememberMe) Keep me signed in</label>
+        </div>
+        <div class="forgot">@Html.ActionLink("Forgot Password?", "ForgotPassword")</div>
+
+        <button id="btnLogin" type="submit" class="button button-block">Sign In</button>
+    }
+</div>
+
+
+@section Scripts{
+    <script src="~/Scripts/Site/Account/docusignDemo.account.login.js"></script>
+}

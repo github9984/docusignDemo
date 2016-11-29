@@ -1,0 +1,122 @@
+﻿@import "variables";
+
+.side-menu {
+    background: black;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    position: fixed;
+    top: 40px;
+    bottom: 0;
+    height: 450px;
+    left: 0;
+    width: 60px;
+    overflow: hidden;
+    /*overflow: hidden;*/
+    -webkit-transition: width .05s linear;
+    transition: width .05s linear;
+    -webkit-transform: translateZ(0) scale(1,1);
+    z-index: 2000;
+
+    .fa-2x {
+        font-size: 2em;
+    }
+
+    .fa {
+        position: relative;
+        display: table-cell;
+        width: 60px;
+        height: 36px;
+        text-align: center;
+        vertical-align: middle;
+        /*font-size: 20px;*/
+        padding-top: 2px;
+        color: white;
+    }
+
+    > ul {
+        margin: 7px 0;
+    }
+
+    li {
+        position: relative;
+        display: block;
+        width: 250px;
+        padding: 7px 0px 7px 0px;
+    }
+
+    li > a {
+        position: relative;
+        display: table;
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-family: arial;
+        font-size: 14px;
+        text-decoration: none;
+        -webkit-transform: translateZ(0) scale(1,1);
+        -webkit-transition: all .1s linear;
+        transition: all .1s linear;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    .nav-icon {
+        position: relative;
+        display: table-cell;
+        width: 60px;
+        height: 36px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 18px;
+    }
+
+    .nav-text {
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        width: 190px;
+    }
+
+    li:hover > a, nav.side-menu li.active > a, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .no-touch .dashboard-page nav.dashboard-menu ul li:hover a, .dashboard-page nav.dashboard-menu ul li.active a {
+        color: #fff;
+        background-color: $sidemenu-link-hover;
+    }
+
+    a:hover, a:focus {
+        text-decoration: none;
+    }
+
+    nav {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+
+    nav ul, nav li {
+        outline: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .no-touch .scrollable.hover {
+        overflow-y: hidden;
+    }
+
+    .no-touch .scrollable.hover:hover {
+        overflow-y: auto;
+        overflow: visible;
+    }
+}
+
+
+.side-menu:hover, nav.side-menu.expanded {
+    width: 250px;
+    overflow: visible;
+}
+
+
+ 

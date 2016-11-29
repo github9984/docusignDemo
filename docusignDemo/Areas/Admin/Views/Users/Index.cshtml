@@ -1,0 +1,70 @@
+﻿@using docusignDemo.Extensions
+@using WebGrease.Css.Extensions
+@model IEnumerable<docusignDemo.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="box">
+    <h3><span>@ViewBag.Title</span></h3>
+    
+    <p>
+        <a href="@Url.Action("Create", "Users")" class="button button-primary">Add User</a>
+    </p>
+    <table class="table">
+        <thead>
+        @*thead and tbody is required for DataTables to work*@
+        <tr>
+            <th>
+                User name
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Roles
+            </th>
+            <th>
+                Locked Out
+            </th>
+            <th>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @{
+                        foreach (var r in item.Roles)
+                        {
+                            @GenericPrincipalExtensions.GetRoleName(r.RoleId);
+                        }
+                    }
+                </td>
+                <td>
+                    @if (item.LockoutEndDateUtc > DateTime.UtcNow)
+                    {
+                        <i class="fa fa-lock"></i>
+                    }
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {id = item.Id}, new {@class = "button button-default"})
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "button button-danger" })
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+

@@ -1,0 +1,90 @@
+﻿@model docusignDemo.Models.EditUserViewModel
+
+@{
+    ViewBag.Title = "Edit User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="box">
+    <h3><span>@ViewBag.Title</span></h3>
+
+    @using (Html.BeginForm("Edit", "Users", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-md-2 required" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-2 required" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.LastName)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2 required" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">User Role</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(x => Model.UserRoles)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Lock User?</label>
+                <div class="col-md-10 checkbox-align-fix">
+                    @Html.CheckBoxFor(model => model.LockUser)
+                    @Html.ValidationMessageFor(model => model.LockUser, "", new { @class = "text-danger" })
+
+                    @{
+                        var lockoutUntil = new DateTime(2999, 1, 1);
+
+                        if (Model.LockoutEndDateUtc == lockoutUntil)
+                        {
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    * Indefinite
+                                </div>
+                            </div>
+                        }
+                        if ((Model.LockoutEndDateUtc > DateTime.UtcNow) && (Model.LockoutEndDateUtc != lockoutUntil))
+                        {
+                            <div class="form-group">
+                                <div class="col-md-12 checkbox-align-fix">
+                                    Locked out until @Html.DisplayFor(model => model.LockoutEndDateUtc, new { @class = "form-control" }) UTC
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+
+
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "button button-default" })
+                    <input type="submit" value="Save" class="button button-primary" />
+                </div>
+            </div>
+        </div>
+                        }
+
+    <div>
+    </div>
+</div>

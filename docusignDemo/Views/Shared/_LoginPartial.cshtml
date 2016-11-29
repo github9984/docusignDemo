@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNet.Identity
+@using docusignDemo.Extensions
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", new { Area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="logout">
+            <li>
+                <a href="@Url.Action("Index","Manage", new {Area=""})">
+                    <i class="fa fa-key fa-2x"></i>
+                    <span class="nav-text">
+                        Change Password
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:document.getElementById('logoutForm').submit()">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Sign Out
+                    </span>
+                </a>
+            </li>
+        </ul>
+    }
+}
