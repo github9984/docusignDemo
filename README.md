@@ -6,4 +6,3 @@ Requirements.
 
 sql server express 2016
 
--- this is the final copy to submit.
