@@ -7,6 +7,3 @@ Requirements.
 sql server express 2016
 
 
-test added
-
-comment after commit
